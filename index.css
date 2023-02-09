@@ -39,7 +39,7 @@
 
 .mid-svg {
     position: absolute;
-    top: 80%;
+    top: 76%;
     width: 100%;
 }
 
@@ -94,6 +94,7 @@
     outline: none;
     border-radius: 20px;
     background: #fff;
+    color: var(--DarkColor);
 }
 
 #header-buttons {
@@ -406,19 +407,6 @@
 
 
 
-.ham-hamburger.is-prf:before {
-    background-color: #fff;
-}
-
-.ham-hamburger.is-prf:after {
-    background-color: #fff;
-
-}
-.ham-hamburger.is-prf .ham-bar {
-    background-color: #fff;
-
-}
-
 
 
 
@@ -493,6 +481,7 @@
     padding: 10px 25px;
     outline: none;
     border-radius: 40px;
+    color: var(--DarkColor);
     background: #fff;
     font-size: 20px;
     font-weight: 600;
