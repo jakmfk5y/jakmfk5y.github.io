@@ -100,6 +100,7 @@
 
 #header-buttons {
     margin-top: 30px;
+    display: flex;
 }
 
 .dark-round-button {
@@ -157,6 +158,19 @@
     font-size: 17px;
     font-weight: 400;
 }
+
+.functions-section h5 {
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.functions-section span {
+    font-weight: 700;
+}
+
+
 
 .functions-icon-box {
     width: 60px;
@@ -522,8 +536,32 @@
     margin-left: 30px;
     margin-top: 30px;
 }
+.vertical-menu {
+    position: absolute;
+    width: 70%;
+    right: 0;
+    top: 100px;
+    text-align: end;
+    height: calc(100% - 100px);
+}
 
+.vertical-menu a {
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    padding-top: 30px;
+}
 
+.menu-top {
+    display: grid;
+    margin-right: 20px;
+}
+
+.menu-bottom {
+    margin-top: 100%;
+    display: grid;
+    margin-right: 20px;
+}
 
 
 
