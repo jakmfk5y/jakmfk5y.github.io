@@ -1099,6 +1099,8 @@
 
     .nav.open h2 {
 
+        border: #d1d1d1 2px solid;
+        border-radius: 0 0 20px 20px;
         padding-bottom: 18px;
 
 
@@ -1126,18 +1128,16 @@
     }
 
     .nav-content.open a{
-        padding-left: 0;
-	    z-index: 30;
+        margin-left: 15%;
+        z-index: 30;
 
     }
 
 
     .nav-content a {
-        padding-left: 100%;
-	    z-index: -200;
+        margin-left: 100%;
         font-weight: 600;
         width: 70%;
-        margin-left: 15%;
         text-decoration: none;
         border: none;
         color: var(--DarkColor);
@@ -1145,6 +1145,7 @@
         
         padding-bottom: 30px;
         transition: .3s all ease;
+        z-index: -200;
     }
 
   }
