@@ -1126,13 +1126,13 @@
     }
 
     .nav-content.open a{
-        padding-left: 0;
+        margin-left: 0;
 
     }
 
 
     .nav-content a {
-        padding-left: 100%;
+        margin-left: 100%;
         font-weight: 600;
         width: 70%;
         margin-left: 15%;
