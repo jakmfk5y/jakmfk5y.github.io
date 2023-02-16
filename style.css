@@ -1065,7 +1065,7 @@
     .nav {
         position: fixed;
         width: 100%;
-        background: var(--backgroundGrey);
+        background: #fff;
         border: #d1d1d1 2px solid;
         border-radius: 0 0 20px 20px;
         transition: 0.3s all ease;
