@@ -5,16 +5,32 @@ function sleep(ms) {
 
 const menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
-menuBtn.addEventListener('click', function() {
+menuBtn.addEventListener('click', async function() {
   if(!menuOpen) {
     menuBtn.classList.add('open');
     menuOpen = true;
     document.querySelector('.nav').classList.add('open')
     document.querySelector('.nav-content').classList.add('open')
+    let menuLinks = document.querySelectorAll('.nav-btn')
+    await sleep(200)
+    console.log(menuLinks)
+    for(let i = 0; i < menuLinks.length; i++) {
+        await sleep(30)
+        menuLinks[i].classList.add('open')
+    }
   } else {
+    let menuLinks = document.querySelectorAll('.nav-btn')
+
+    console.log(menuLinks)
+    for(let i = 0; i < menuLinks.length; i++) {
+        await sleep (25)
+        menuLinks[menuLinks.length - i - 1].classList.remove('open')
+    }
     document.querySelector('.nav').classList.remove('open')
     document.querySelector('.nav-content').classList.remove('open')
     menuBtn.classList.remove('open');
+    
+    
     menuOpen = false;
   }
 });
@@ -28,67 +44,90 @@ function getOffset(el) {
     };
   }
 
+  document.querySelector('#img1').classList.add('current')
 
-
-let progressEnd = document.querySelector('#section5').getBoundingClientRect().top + window.scrollY
 
 function setCircle(x, y) {
     let progressCircle = document.querySelector('#prg-circle-fill2')
 
     progressCircle.style.strokeDashoffset = (565 - (565 * ((x / y) * 100)) / 100)
 }
-
+console.log()
 window.addEventListener('scroll', function() {
-    let scrollDifference = Math.floor(progressEnd / 12)
+    if(this.window.scrollY >= document.querySelector('#section1').getBoundingClientRect().height) {
+        let progressEnd = document.querySelector('#section5').getBoundingClientRect().top + window.scrollY
+        console.log(`${progressEnd} xxx`)
+        let scrollDifference = Math.floor(progressEnd / 4) 
 
-    let z = Math.ceil(this.window.scrollY / scrollDifference)
-    if( z <= 12) {
-        this.document.querySelector('#method-quan-number').innerHTML = `${z} / 12`
-        setCircle(z, 12)
-    }
 
     
-
-    if(this.window.scrollY <= progressEnd) {
         
+    
+        if(this.window.scrollY <= progressEnd) {
+            
+        }
+        else {
+            setCircle(1, 1)
+        }
+        
+        console.log(window.scrollY)
+        if(getOffset(document.querySelector('#section1')).top < getOffset(document.querySelector('.app-box')).top) {
+            document.querySelector('#app-method-header').innerHTML = 'Refresh all'
+        }
+        if(getOffset(document.querySelector('#section2')).top < getOffset(document.querySelector('.app-box')).top) {
+            document.querySelector('#app-method-header').innerHTML = 'Refresh all'
+            document.querySelector('#method-type').innerHTML = 'Refreshing items'
+            document.querySelector('#method-quan').innerHTML = ' items refreshed'
+            document.querySelector('#img1').classList.add('current')
+            document.querySelector('#img2').classList.remove('current')
+            document.querySelector('#img3').classList.remove('current')
+            document.querySelector('#img4').classList.remove('current')
+            
+
+            this.document.querySelector('#method-quan-number').innerHTML = `1 / 4`
+            setCircle(1, 4)
+        }
+        if(getOffset(document.querySelector('#section3')).top < getOffset(document.querySelector('.app-box')).top) {
+            document.querySelector('#app-method-header').innerHTML = 'Discount'
+            document.querySelector('#method-type').innerHTML = 'Changing prices'
+            document.querySelector('#method-quan').innerHTML = ' prices changed'
+            document.querySelector('#img1').classList.remove('current')
+            document.querySelector('#img2').classList.add('current')
+            document.querySelector('#img3').classList.remove('current')
+            document.querySelector('#img4').classList.remove('current')
+            
+            this.document.querySelector('#method-quan-number').innerHTML = `2 / 4`
+            setCircle(2, 4)
+        }
+        if(getOffset(document.querySelector('#section4')).top < getOffset(document.querySelector('.app-box')).top) {
+            document.querySelector('#app-method-header').innerHTML = 'Follow'
+            document.querySelector('#method-type').innerHTML = 'Following users'
+            document.querySelector('#method-quan').innerHTML = ' users followed'
+            document.querySelector('#img1').classList.remove('current')           
+            document.querySelector('#img2').classList.remove('current')
+            document.querySelector('#img3').classList.add('current')
+            document.querySelector('#img4').classList.remove('current')
+            this.document.querySelector('#method-quan-number').innerHTML = `3 / 4`
+            setCircle(3, 4)
+    
+        }
+        if(getOffset(document.querySelector('#section5')).top < getOffset(document.querySelector('.app-box')).top) {
+            document.querySelector('#app-method-header').innerHTML = 'Like'
+            document.querySelector('#method-type').innerHTML = 'Liking items'
+            document.querySelector('#method-quan').innerHTML = ' items liked'
+            document.querySelector('#img1').classList.remove('current')   
+            document.querySelector('#img2').classList.remove('current')
+            document.querySelector('#img3').classList.remove('current')
+            document.querySelector('#img4').classList.add('current')
+            this.document.querySelector('#method-quan-number').innerHTML = `4 / 4`
+            setCircle(4, 4)
+            
+        }
     }
     else {
-        setCircle(1, 1)
+        this.document.querySelector('#method-quan-number').innerHTML = `0 / 4`
+            setCircle(0, 4)
     }
-    
-    console.log(window.scrollY)
-    if(getOffset(document.querySelector('#section1')).top < getOffset(document.querySelector('.app-box')).top) {
-        document.querySelector('#app-method-header').innerHTML = 'Refresh all'
-    }
-    if(getOffset(document.querySelector('#section2')).top < getOffset(document.querySelector('.app-box')).top) {
-        document.querySelector('#app-method-header').innerHTML = 'Refresh all'
-        document.querySelector('#method-type').innerHTML = 'Refreshing items'
-        document.querySelector('#method-quan').innerHTML = ' items refreshed'
-        document.querySelector('.prg-item-img').src = `https://img.freepik.com/premium-vector/vector-illustration-skirts-women-s-clothes-skirt-vector-sketch-illustration_231873-1827.jpg?w=740`
-        
-    }
-    if(getOffset(document.querySelector('#section3')).top < getOffset(document.querySelector('.app-box')).top) {
-        document.querySelector('#app-method-header').innerHTML = 'Discount'
-        document.querySelector('#method-type').innerHTML = 'Changing prices'
-        document.querySelector('#method-quan').innerHTML = ' prices changed'
-        document.querySelector('.prg-item-img').src = `https://img.freepik.com/premium-vector/vector-illustration-skirts-women-s-clothes-skirt-vector-sketch-illustration_231873-1827.jpg?w=740`
-
-    }
-    if(getOffset(document.querySelector('#section4')).top < getOffset(document.querySelector('.app-box')).top) {
-        document.querySelector('#app-method-header').innerHTML = 'Follow'
-        document.querySelector('#method-type').innerHTML = 'Following users'
-        document.querySelector('#method-quan').innerHTML = ' users followed'
-        document.querySelector('.prg-item-img').src = `user.jpg`
-
-    }
-    if(getOffset(document.querySelector('#section5')).top < getOffset(document.querySelector('.app-box')).top) {
-        document.querySelector('#app-method-header').innerHTML = 'Like'
-        document.querySelector('#method-type').innerHTML = 'Liking items'
-        document.querySelector('#method-quan').innerHTML = ' items liked'
-        document.querySelector('.prg-item-img').src = `user.jpg`
-        
-    }
-
     
     
 
