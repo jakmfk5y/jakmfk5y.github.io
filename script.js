@@ -7,10 +7,13 @@ const menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
 menuBtn.addEventListener('click', async function() {
   if(!menuOpen) {
+    document.querySelector('.nav-content').style.display = "grid"
+    await sleep(10)
     menuBtn.classList.add('open');
     menuOpen = true;
     document.querySelector('.nav').classList.add('open')
     document.querySelector('.nav-content').classList.add('open')
+    
     let menuLinks = document.querySelectorAll('.nav-btn')
     await sleep(200)
     console.log(menuLinks)
@@ -29,6 +32,8 @@ menuBtn.addEventListener('click', async function() {
     document.querySelector('.nav').classList.remove('open')
     document.querySelector('.nav-content').classList.remove('open')
     menuBtn.classList.remove('open');
+    await sleep(320)
+    document.querySelector('.nav-content').style.display = "none"
     
     
     menuOpen = false;
@@ -41,6 +46,7 @@ function getOffset(el) {
     return {
       left: rect.left + window.scrollX,
       top: rect.top + window.scrollY,
+      height: rect.height
     };
   }
 
@@ -52,12 +58,9 @@ function setCircle(x, y) {
 
     progressCircle.style.strokeDashoffset = (565 - (565 * ((x / y) * 100)) / 100)
 }
-console.log()
 window.addEventListener('scroll', function() {
-    if(this.window.scrollY >= document.querySelector('#section1').getBoundingClientRect().height) {
+    if(this.window.scrollY >= document.querySelector('#section1').getBoundingClientRect().height - 300) {
         let progressEnd = document.querySelector('#section5').getBoundingClientRect().top + window.scrollY
-        console.log(`${progressEnd} xxx`)
-        let scrollDifference = Math.floor(progressEnd / 4) 
 
 
     
@@ -70,11 +73,7 @@ window.addEventListener('scroll', function() {
             setCircle(1, 1)
         }
         
-        console.log(window.scrollY)
-        if(getOffset(document.querySelector('#section1')).top < getOffset(document.querySelector('.app-box')).top) {
-            document.querySelector('#app-method-header').innerHTML = 'Refresh all'
-        }
-        if(getOffset(document.querySelector('#section2')).top < getOffset(document.querySelector('.app-box')).top) {
+        if((getOffset(document.querySelector('#section2')).top - (getOffset(document.querySelector('#section2')).height)) < getOffset(document.querySelector('.app-box')).top) {
             document.querySelector('#app-method-header').innerHTML = 'Refresh all'
             document.querySelector('#method-type').innerHTML = 'Refreshing items'
             document.querySelector('#method-quan').innerHTML = ' items refreshed'
@@ -87,7 +86,7 @@ window.addEventListener('scroll', function() {
             this.document.querySelector('#method-quan-number').innerHTML = `1 / 4`
             setCircle(1, 4)
         }
-        if(getOffset(document.querySelector('#section3')).top < getOffset(document.querySelector('.app-box')).top) {
+        if((getOffset(document.querySelector('#section3')).top - (getOffset(document.querySelector('#section3')).height / 2)) < getOffset(document.querySelector('.app-box')).top) {
             document.querySelector('#app-method-header').innerHTML = 'Discount'
             document.querySelector('#method-type').innerHTML = 'Changing prices'
             document.querySelector('#method-quan').innerHTML = ' prices changed'
@@ -99,7 +98,7 @@ window.addEventListener('scroll', function() {
             this.document.querySelector('#method-quan-number').innerHTML = `2 / 4`
             setCircle(2, 4)
         }
-        if(getOffset(document.querySelector('#section4')).top < getOffset(document.querySelector('.app-box')).top) {
+        if((getOffset(document.querySelector('#section4')).top - (getOffset(document.querySelector('#section4')).height / 2)) < getOffset(document.querySelector('.app-box')).top) {
             document.querySelector('#app-method-header').innerHTML = 'Follow'
             document.querySelector('#method-type').innerHTML = 'Following users'
             document.querySelector('#method-quan').innerHTML = ' users followed'
@@ -111,7 +110,7 @@ window.addEventListener('scroll', function() {
             setCircle(3, 4)
     
         }
-        if(getOffset(document.querySelector('#section5')).top < getOffset(document.querySelector('.app-box')).top) {
+        if((getOffset(document.querySelector('#section5')).top - (getOffset(document.querySelector('#section5')).height / 2)) < getOffset(document.querySelector('.app-box')).top) {
             document.querySelector('#app-method-header').innerHTML = 'Like'
             document.querySelector('#method-type').innerHTML = 'Liking items'
             document.querySelector('#method-quan').innerHTML = ' items liked'
@@ -139,7 +138,6 @@ window.addEventListener('scroll', function() {
 let lists = document.querySelectorAll('.faq-elements')
 let responses = document.querySelectorAll('.faq-response')
 let icons = document.querySelectorAll('.faq-svg')
-console.log(responses)
 for (let i = 0; i < lists.length; i++) {
 
     
