@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto+Slab:wght@200;300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    --DarkColor: #445e61;
+    --invertedColor: #ab938e;
+    --backgroundGrey: #eeeeee;
+    --borderGrey: #c9c9c9;
+}
+
+
+
+::selection {
+    color: white;
+    background-color: var(--DarkColor);
+}
+
+.row1 {
+    display: flex;
+    min-height: 600px;
+}
+
+#section1 {
+    background: #81b3b1;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section2 {
+    background: #81b3b1;
+    width: 50%;
+    height: 100%;
+}
+
+.signup {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius:0 20px 20px  0;
+}
+
+.signup h2 {
+    width: 60%;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 32px;
+    padding-top: 70px;
+}
+
+.signup h3 {
+    width: 60%;
+    font-weight: 500;
+    font-size: 13px;
+    color: #656565;
+    margin-bottom: 20px;
+    
+}
+
+.signup h4 {
+    font-weight: 500;
+    font-size: 13px;
+    width: 100%;
+    color: black;
+    
+}
+
+.signup h4 span {
+    font-weight: 600;
+    color: var(--DarkColor);
+    cursor: pointer;
+    
+}
+
+
+.input-box {
+    width: 60%;
+    display: block;
+    position: relative;
+
+}
+
+.button-box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+
+}
+
+.input-box h5 {
+    font-weight: 500;
+    margin: 10px;
+}
+
+.input-box h6 {
+    font-weight: 500;
+    margin: 10px;
+    text-align: end;
+    cursor: pointer;
+}
+
+.auth-input {
+    padding: 10px 30px 10px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    width: calc(100% - 20px);
+    background: var(--backgroundGrey);
+    border: 2px solid var(--borderGrey);
+    border-radius: 10px;
+}
+
+.auth-button {
+    width: 60%;
+    padding: 10px 20px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-svg {
+    width: 20px;
+    height: auto;
+    padding-left: 15px;
+}
+
+.password-svg {
+    position: relative;
+    height: 20px;
+    width: auto;
+}
+
+#show-password {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#hide-password {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#show-password.current {
+    display: flex;
+}
+
+#hide-password.current {
+    display: flex;
+}
+.current {
+    transition: .3s all ease;
+}
+.current:hover {
+    transform: scale(110%);
+}
+
+.password-input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-button {
+    margin-bottom: 20px;
+}
+
+.state-change-box {
+    padding-top: 50px;
+    width: 60%;
+    text-align: start;
+}
+
+.checkmark {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 7px;
+    transition: .3s all ease;
+    border: 2px solid var(--borderGrey);
+  }
+
+  .terms-box {
+    position: relative;
+    width: 60%;
+    display: flex;
+    margin-top: 30px;
+  }
+
+  .terms-box h6 {
+    margin-top: 5px;
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 13px;
+
+  }
+
+  .terms-box h6 span {
+    font-weight: 600;
+  }
+
+  .check-box {
+    width: 29px;
+    height: 29px;
+  }
+
+  .terms-box input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    z-index: 1000;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .terms-box:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .terms-box input:checked ~ .checkmark {
+    background-color: var(--DarkColor);
+    border: white 2px solid;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .terms-box input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .terms-box .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.dark-button {
+    background: var(--DarkColor);
+    border: 2px solid transparent;
+    color: white;
+    transition: .3s all ease;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.dark-button:hover {
+    background: var(--backgroundGrey);
+    border: 2px solid var(--borderGrey);
+    color: var(--DarkColor);
+}
+
+
+.light-button {
+    
+    background: var(--backgroundGrey);
+    border: 2px solid var(--borderGrey);
+    color: var(--DarkColor);
+    transition: .3s all ease;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.light-button:hover {
+    background: var(--DarkColor);
+    border: 2px solid transparent;
+    color: white;
+}
+
+@keyframes morph {
+    0%{
+        fill: var(--DarkColor);
+    }
+    100%{
+        fill: #fff  
+    }
+  }
+
+.light-button:hover .button-svg path{
+    animation: morph .3s normal forwards ease;
+}
+  @media only screen and (max-width: 1050px)  { 
+
+    #section2 {
+        display: none;
+    }
+
+    .row1 {
+        
+    }
+
+    #section1 {
+        width: 100%;
+    }
+
+    .signup {
+        border-radius: 0;
+    }
+
+    .terms-box h6 {
+        margin-left: 25px;
+        
+    
+      }
+
+      .state-change-box {
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
+    .button-svg {
+        padding-left: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 400px)  { 
+    .button-svg {
+        display: none;
+    }
+
+  }
