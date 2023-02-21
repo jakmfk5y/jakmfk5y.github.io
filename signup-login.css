@@ -18,7 +18,9 @@
 
 .row1 {
     display: flex;
-    min-height: 600px;
+    height: 100vh;
+    min-height: 750px;
+    
 }
 
 #section1 {
@@ -195,6 +197,7 @@
     padding-top: 50px;
     width: 60%;
     text-align: start;
+    padding-bottom: 50px;
 }
 
 .checkmark {
@@ -327,8 +330,23 @@
         display: none;
     }
 
-    .row1 {
-        
+    .signup h2 {
+        width: 80%;
+    }
+
+    .signup h3 {
+        width: 80%;
+    }
+    .input-box {
+        width: 80%;
+    }
+
+    .auth-button {
+        width: 80%;
+    }
+
+    .terms-box {
+        width: 80%;
     }
 
     #section1 {
