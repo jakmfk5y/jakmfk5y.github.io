@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="signup-login.css">
+    <link rel="stylesheet" href="resetPassword.css">
 
 </head>
 <body>
@@ -24,75 +24,26 @@
 
             <div id="section1">
                 <div class="signup">
-                    <h2>Signup</h2>
-                    <h3>Sign Up to our service if you dont have an account</h3>
+                    <h2>Reset your password</h2>
+                    <h3>Don't worry. Happens to the best of us</h3>
                     <div class="input-box">
-                        <h5>E-mail</h5>
+                        <h5>Your E-mail</h5>
                         <input class="auth-input" type="text" placeholder="examplemail@gmail.com">
                     </div>
 
-                    <div class="input-box">
-                        <h5>Password</h5>
-                        
-                            <div class="password-input-box">
-                                <input id="password-input" class="auth-input" type="password" placeholder="••••••••••">
-                                <button id="show-password" class="current">
-                                    <svg class="password-svg" width="56" height="44" viewBox="0 0 56 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M49.875 41.0625L10.8125 2M23.3125 17.4728C22.3401 18.5449 21.75 19.9532 21.75 21.4956C21.75 24.8544 24.5482 27.5773 28 27.5773C29.5915 27.5773 31.0441 26.9984 32.1475 26.0453M49.9761 27.5773C52.1277 24.3563 53 21.7295 53 21.7295C53 21.7295 47.3109 3.5625 28 3.5625C26.9159 3.5625 25.8747 3.61976 24.875 3.72785M42.0625 35.4621C38.4755 37.7504 33.8576 39.3685 28 39.2727C8.92949 38.9609 3 21.7295 3 21.7295C3 21.7295 5.75483 12.9325 13.9375 7.58156" stroke="#546C71" stroke-width="4" stroke-linecap="round"/>
-                                        </svg>
-                                </button>
+                    <button id="reset-button" class="auth-button light-button">E-mail me a recovery link</button>
+                    <h4>Have more questions? E-mail us at <span>examplemail@gmail.com</span></h4>
 
-                                <button id="hide-password">
-                                    
-                                        <svg class="password-svg" width="56" height="41" viewBox="0 0 56 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M49.9761 26.5773C52.1277 23.3563 53 20.7295 53 20.7295C53 20.7295 47.3109 2.5625 28 2.5625C26.9159 2.5625 25.8747 2.61976 24.875 2.72785C8 5 3 20.7295 3 20.7295C3 20.7295 8.92949 37.9609 28 38.2727C33.8576 38.3685 38.4755 36.7504 42.0625 34.4621M28 26.5773C24.5482 26.5773 21.75 23.8544 21.75 20.4956C21.75 18.9532 22.3401 17.5449 23.3125 16.4728C24.4159 15.5197 25.8685 14.9409 27.46 14.9409C30.9118 14.9409 33.71 17.6637 33.71 21.0225C33.71 22.5649 33.12 23.9732 32.1475 25.0453C31.0441 25.9984 29.5915 26.5773 28 26.5773Z" stroke="#546C71" stroke-width="4" stroke-linecap="round"/>
-                                            </svg>
-                                            
-                                   
-                                </button>
-                                
-                            </div>
-                        <h6>Forgot password?</h6>
-                            
+                    <div class="email-sent">
+                        <h1>Email sent</h1>
+                        <button id="go-back-button" class="auth-button light-button">Go back</button>
+
                     </div>
-                    <div class="button-box">
-                        <button class="auth-button dark-button" id="signup-button">Signup</button>
-                        <button class="auth-button light-button" id="signup-google-button">Sign up with Google
-                        
-
-
-                                <svg class="button-svg" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M49 25.5687C49 23.796 48.8409 22.0914 48.5455 20.4551H25V30.1255H38.4545C37.875 33.2505 36.1136 35.8983 33.4659 37.671V43.9437H41.5455C46.2727 39.5914 49 33.1823 49 25.5687Z" fill="#4285F4"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25 50C31.75 50 37.4091 47.7614 41.5454 43.9432L33.4659 37.6705C31.2272 39.1705 28.3636 40.0568 25 40.0568C18.4886 40.0568 12.9772 35.6591 11.0113 29.75H2.65906V36.2273C6.77269 44.3977 15.2272 50 25 50Z" fill="#34A853"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0114 29.7507C10.5114 28.2507 10.2273 26.6484 10.2273 25.0007C10.2273 23.353 10.5114 21.7507 11.0114 20.2507V13.7734H2.65909C0.965909 17.1484 0 20.9666 0 25.0007C0 29.0348 0.965909 32.853 2.65909 36.228L11.0114 29.7507Z" fill="#FBBC05"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25 9.94318C28.6704 9.94318 31.9659 11.2045 34.5568 13.6818L41.7272 6.51136C37.3977 2.47727 31.7386 0 25 0C15.2272 0 6.77269 5.60227 2.65906 13.7727L11.0113 20.25C12.9772 14.3409 18.4886 9.94318 25 9.94318Z" fill="#EA4335"/>
-                                    </svg>
-                                    
-                                
-                        </button>
-                    </div>
-
-                    <div class="terms-box">
-                        <div class="check-box">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </div>
-                        
-                        <h6>By creating account you agree with out <span>terms and services</span></h6>
-                    </div>
-
-                    <div class="state-change-box">
-                        <h4>Already have an account? <span>Log in</span></h4>
-                    </div>
-
-                    
 
                 </div>
             </div>
 
-            <div id="section2">
-
-            </div>
+            
 
             
 
@@ -129,6 +80,6 @@
 
 
 
-    <script src="signup-login.js"></script>
+    <script src="resetPassword.js"></script>
 </body>
 </html>
